@@ -4,10 +4,12 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private int maxHealth;
     private int currentHealth;
+    private ScoreManager scoreManager;
 
     private void Start()
     {
         currentHealth = maxHealth;
+        scoreManager = FindObjectOfType<ScoreManager>();
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -24,6 +26,7 @@ public class Enemy : MonoBehaviour
         
         if (currentHealth <= 0)
         {
+            scoreManager.AddScore(maxHealth);
             Destroy(gameObject);
         }
     }

@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
-    public GameObject bulletPrefab;
-    public Transform firePoint;
-    private float fireRate = 0.5f;
+    [SerializeField] public GameObject bulletPrefab;
+    [SerializeField] public Transform firePoint;
+    private float fireRate = 0.75f;
     private float nextFireTime = 0f;
 
-    void Update()
+    private void Update()
     {
         if (Input.GetButtonDown("Fire1") && Time.time >= nextFireTime)
         {
@@ -16,7 +16,7 @@ public class Shooting : MonoBehaviour
         }
     }
 
-    void Shoot()
+    private void Shoot()
     {
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         
