@@ -431,10 +431,10 @@ GameObject:
   - component: {fileID: 1330783617}
   - component: {fileID: 1330783619}
   - component: {fileID: 1330783621}
-  - component: {fileID: 1330783622}
   - component: {fileID: 1330783616}
   - component: {fileID: 1330783620}
   - component: {fileID: 1330783618}
+  - component: {fileID: 1330783622}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
