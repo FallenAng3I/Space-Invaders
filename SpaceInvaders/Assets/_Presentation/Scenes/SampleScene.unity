@@ -398,7 +398,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 738189161}
-  - component: {fileID: 738189162}
   m_Layer: 0
   m_Name: PivotShoot
   m_TagString: Untagged
@@ -421,20 +420,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1330783617}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &738189162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 738189160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ed639324da4a5c4490c187e27868117, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
-  bulletPrefab: {fileID: 6960034987204775412, guid: ba6d9e15c8c2be5498551ce9a036df90, type: 3}
 --- !u!1 &1330783615
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,6 +430,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1330783617}
   - component: {fileID: 1330783619}
+  - component: {fileID: 1330783621}
+  - component: {fileID: 1330783622}
   - component: {fileID: 1330783616}
   - component: {fileID: 1330783620}
   - component: {fileID: 1330783618}
@@ -536,7 +523,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1330783619}
-  boundaryX: 8
 --- !u!114 &1330783619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -578,6 +564,33 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1330783621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330783615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf101eac3818b224bb60b22c1e77dab2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boundaryX: 7
+--- !u!114 &1330783622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330783615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ed639324da4a5c4490c187e27868117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6960034987204775412, guid: ba6d9e15c8c2be5498551ce9a036df90, type: 3}
+  firePoint: {fileID: 738189161}
 --- !u!1 &1889810691
 GameObject:
   m_ObjectHideFlags: 0
