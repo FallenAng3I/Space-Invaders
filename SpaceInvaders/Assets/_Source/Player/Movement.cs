@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public Player player;
+    public Player.Player player;
 
     void Update()
     {

@@ -1,33 +1,36 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+namespace Enemy
 {
-    [SerializeField] private int maxHealth;
-    private int currentHealth;
-    private ScoreManager scoreManager;
-
-    private void Start()
+    public class Enemy : MonoBehaviour
     {
-        currentHealth = maxHealth;
-        scoreManager = FindObjectOfType<ScoreManager>();
-    }
+        [SerializeField] private int maxHealth;
+        private int currentHealth;
+        private ScoreManager scoreManager;
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Bullet"))
+        private void Start()
         {
-            TakeDamage(1);
+            currentHealth = maxHealth;
+            scoreManager = FindObjectOfType<ScoreManager>();
         }
-    }
 
-    void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-        
-        if (currentHealth <= 0)
+        void OnTriggerEnter2D(Collider2D collision)
         {
-            scoreManager.AddScore(maxHealth);
-            Destroy(gameObject);
+            if (collision.CompareTag("Bullet")) //TODO сменить на layer
+            {
+                TakeDamage(1);
+            }
+        }
+
+        void TakeDamage(int damage)
+        {
+            currentHealth -= damage;
+        
+            if (currentHealth <= 0)
+            {
+                scoreManager.AddScore(maxHealth);
+                Destroy(gameObject);
+            }
         }
     }
 }
