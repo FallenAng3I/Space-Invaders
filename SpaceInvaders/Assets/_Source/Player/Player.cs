@@ -7,7 +7,7 @@ namespace Player
         public int health = 3;
         public float speed;
         public Death death;
-    
+        
         void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.CompareTag("Enemy"))
