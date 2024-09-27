@@ -558,7 +558,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -764, y: 432}
+  m_AnchoredPosition: {x: 0, y: 432}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &470338505
@@ -820,7 +820,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 805, y: 432}
+  m_AnchoredPosition: {x: -750, y: 432}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &561773079
@@ -1002,7 +1002,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 582670638}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2106538502}
+        m_TargetAssemblyTypeName: Quit, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &582670638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1440,7 +1452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOver: {fileID: 2106538500}
   player: {fileID: 1330783615}
-  ui: {fileID: 1330783625}
+  bar: {fileID: 1330783625}
 --- !u!114 &1330783625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2224,6 +2236,8 @@ GameObject:
   - component: {fileID: 2106538498}
   - component: {fileID: 2106538499}
   - component: {fileID: 2106538500}
+  - component: {fileID: 2106538501}
+  - component: {fileID: 2106538502}
   m_Layer: 5
   m_Name: GUI
   m_TagString: Untagged
@@ -2280,6 +2294,31 @@ MonoBehaviour:
   deathPanel: {fileID: 9059074}
   scoreText: {fileID: 902540748}
   scoreManager: {fileID: 2106538499}
+--- !u!114 &2106538501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106538497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ca1b85be931f3040a267590ca3b47f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gom: {fileID: 2106538500}
+--- !u!114 &2106538502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106538497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743d1dd8202667448bd77a0ace8bc857, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2143483925
 GameObject:
   m_ObjectHideFlags: 0
