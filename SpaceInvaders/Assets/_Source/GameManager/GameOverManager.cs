@@ -7,7 +7,7 @@ public class GameOverManager : MonoBehaviour
     [SerializeField] private GameObject deathPanel;
     [SerializeField] private TMP_Text scoreText;
     [SerializeField] private ScoreManager scoreManager;
-    
+     
     public void ShowGameOverMenu()
     {
         Time.timeScale = 0;

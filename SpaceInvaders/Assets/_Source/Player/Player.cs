@@ -10,7 +10,7 @@ namespace Player
         
         void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.CompareTag("Enemy"))
+            if (collision.gameObject.CompareTag("Bullet"))
             {
                 Debug.Log("Player has damaged!");
                 TakeDamage(1);

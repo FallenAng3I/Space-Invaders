@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 1
+  canShoot: 1
 --- !u!114 &1782300446790595626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,7 +64,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8277897301503417687, guid: 038dbc27599d26e41b9c59179c7c1bee, type: 3}
   firePoint: {fileID: 632648912286757763}
-  fireRate: 0.5
+  fireRate: 4
 --- !u!212 &3647875890212778960
 SpriteRenderer:
   m_ObjectHideFlags: 0
