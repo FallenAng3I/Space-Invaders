@@ -18,6 +18,11 @@ public class ScoreManager : MonoBehaviour
         UpdateScoreText();
     }
     
+    public int GetScore()
+    {
+        return score;
+    }
+    
     private void UpdateScoreText()
     {
         scoreText.text = " " + score;

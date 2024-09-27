@@ -26,7 +26,6 @@ namespace Enemy
             {
                 rbBullet.velocity = Vector2.down * bullet.GetComponent<Bullet>().speed;
             }
-            //Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         }
     }
 }

@@ -6,30 +6,25 @@ namespace Player
     {
         public int health = 3;
         public float speed;
+        public Death death;
     
-        void OnCollisionEnter(Collision collision)
+        void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.CompareTag("Enemy"))
             {
-                int damage = 1;
-                TakeDamage(damage);
+                Debug.Log("Player has damaged!");
+                TakeDamage(1);
             }
         }
         
-        public void TakeDamage(int damage)
+        private void TakeDamage(int damage)
         {
             health -= damage;
             
             if (health <= 0)
             {
-                Die();
+                death.Die();
             }
-        }
-        
-        private void Die()
-        {
-            Debug.Log("Player has died!");
-            gameObject.SetActive(false);
         }
     }
 }
