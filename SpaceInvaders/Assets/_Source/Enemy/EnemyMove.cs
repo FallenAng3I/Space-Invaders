@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
 {
-    [SerializeField] private List<Transform> enemies; // Список противников
+    public List<Transform> enemies;                   // Список противников
     [SerializeField] private float moveSpeed;         // Скорость движения противников
     [SerializeField] private float moveDownDistance;  // Сколько вниз опускаются враги
     [SerializeField] private float boundaryX;         // Границы движения по оси X
