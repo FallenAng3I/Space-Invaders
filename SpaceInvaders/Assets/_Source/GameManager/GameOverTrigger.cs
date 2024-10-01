@@ -8,7 +8,6 @@ public class GameOverTrigger : MonoBehaviour
     {
         if (collider.CompareTag("Enemy"))
         {
-            Debug.Log("Game Over: Enemy reached the bottom!");
             gameOverManager.ShowGameOverMenu();
         }
     }

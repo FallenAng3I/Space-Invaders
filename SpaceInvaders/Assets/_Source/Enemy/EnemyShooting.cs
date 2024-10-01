@@ -6,14 +6,13 @@ namespace Enemy
     {
         [SerializeField] private GameObject bulletPrefab;
         [SerializeField] private Transform firePoint;
-        [SerializeField] private float fireRate; // Скорость стрельбы
+        [SerializeField] private float fireRate;    // Скорость стрельбы
         private float nextFireTime = 0f;
-        private Enemy enemy; // Ссылка на Enemy компонент
+        private Enemy enemy;
 
         private void Start()
         {
-            enemy = GetComponent<Enemy>(); // Получаем Enemy компонент
-            // Случайная задержка перед первым выстрелом
+            enemy = GetComponent<Enemy>();
             nextFireTime = Time.time + Random.Range(0f, fireRate);
         }
 
@@ -21,11 +20,9 @@ namespace Enemy
         {
             if (Time.time >= nextFireTime && enemy.canShoot)
             {
-                // Проверяем, есть ли враги ниже текущего, перед стрельбой
                 if (CanShoot())
                 {
                     ShootDown();
-                    // Установка следующего времени стрельбы с случайной задержкой
                     nextFireTime = Time.time + Random.Range(0.5f, fireRate);
                 }
             }
@@ -42,13 +39,12 @@ namespace Enemy
 
         private bool CanShoot()
         {
-            // Проверьте, есть ли другие враги, находящиеся ниже текущего
             Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 1.0f);
             foreach (var collider in colliders)
             {
                 if (collider.CompareTag("Enemy") && collider.transform.position.y < transform.position.y)
                 {
-                    return false; // Если есть враг ниже, то не стрелять
+                    return false;
                 }
             }
             return true;
