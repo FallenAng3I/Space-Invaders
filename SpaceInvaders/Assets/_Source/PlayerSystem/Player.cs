@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Player
+namespace PlayerSystem
 {
     public class Player : MonoBehaviour
     {
@@ -12,7 +12,7 @@ namespace Player
         {
             if (collision.gameObject.CompareTag("Bullet"))
             {
-                Debug.Log("Player has damaged!");
+                //Debug.Log("Player has damaged!");
                 TakeDamage(1);
             }
         }

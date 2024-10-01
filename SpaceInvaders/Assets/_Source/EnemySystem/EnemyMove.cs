@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Enemy
+namespace EnemySystem
 {
     public class EnemyMove : MonoBehaviour
     {

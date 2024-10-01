@@ -1,14 +1,17 @@
 using UnityEngine;
 
-public class Restart : MonoBehaviour
+namespace GameManager
 {
-    public GameOverManager gom;
-    
-    private void Update()
+    public class Restart : MonoBehaviour
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        public GameOverManager gom;
+    
+        private void Update()
         {
-            gom.RestartGame();
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                gom.RestartGame();
+            }
         }
     }
 }

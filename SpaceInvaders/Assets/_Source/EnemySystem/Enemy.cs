@@ -1,7 +1,8 @@
 using System.Collections;
+using GameManager;
 using UnityEngine;
 
-namespace Enemy
+namespace EnemySystem
 {
     public class Enemy : MonoBehaviour
     {

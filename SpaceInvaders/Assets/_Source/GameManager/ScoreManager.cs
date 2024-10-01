@@ -1,30 +1,33 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
-public class ScoreManager : MonoBehaviour
+namespace GameManager
 {
-    public TMP_Text scoreText;
-    private int score = 0;
+    public class ScoreManager : MonoBehaviour
+    {
+        public TMP_Text scoreText;
+        private int score = 0;
 
-    private void Start()
-    {
-        UpdateScoreText();
-    }
+        private void Start()
+        {
+            UpdateScoreText();
+        }
     
-    public void AddScore(int maxHealth)
-    {
-        int points = 10 * maxHealth;
-        score += points;
-        UpdateScoreText();
-    }
+        public void AddScore(int maxHealth)
+        {
+            int points = 10 * maxHealth;
+            score += points;
+            UpdateScoreText();
+        }
     
-    public int GetScore()
-    {
-        return score;
-    }
+        public int GetScore()
+        {
+            return score;
+        }
     
-    private void UpdateScoreText()
-    {
-        scoreText.text = " " + score;
+        private void UpdateScoreText()
+        {
+            scoreText.text = " " + score;
+        }
     }
 }

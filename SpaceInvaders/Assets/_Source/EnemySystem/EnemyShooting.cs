@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Enemy
+namespace EnemySystem
 {
     public class EnemyShooting : MonoBehaviour
     {
@@ -8,11 +8,11 @@ namespace Enemy
         [SerializeField] private Transform firePoint;
         [SerializeField] private float fireRate;    // Скорость стрельбы
         private float nextFireTime = 0f;
-        private Enemy enemy;
+        private EnemySystem.Enemy enemy;
 
         private void Start()
         {
-            enemy = GetComponent<Enemy>();
+            enemy = GetComponent<EnemySystem.Enemy>();
             nextFireTime = Time.time + Random.Range(0f, fireRate);
         }
 

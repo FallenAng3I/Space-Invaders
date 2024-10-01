@@ -1,10 +1,16 @@
 using UnityEngine;
 
-public class Quit : MonoBehaviour
+namespace GameManager
 {
-    public void QuitGame()
+    public class Quit : MonoBehaviour
     {
-        UnityEditor.EditorApplication.isPaused = true;
-        //Application.Quit();
+        public void QuitGame()
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPaused = true;
+#else
+        Application.Quit();
+#endif
+        }
     }
 }

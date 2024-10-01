@@ -1,30 +1,33 @@
-using Enemy;
+using EnemySystem;
 using UnityEngine;
 
-public class VictoryManager : MonoBehaviour
+namespace GameManager
 {
-    [SerializeField] private EnemyMove enemyMove;
-    [SerializeField] private GameObject victoryPanel;
-
-    private void Update()
+    public class VictoryManager : MonoBehaviour
     {
-        CheckVictory();
-    }
+        [SerializeField] private EnemyMove enemyMove;
+        [SerializeField] private GameObject victoryPanel;
 
-    private void CheckVictory()
-    {
-        if (enemyMove.enemies.Count == 0)
+        private void Update()
         {
-            ShowVictoryScreen();
+            CheckVictory();
         }
-    }
 
-    private void ShowVictoryScreen()
-    {
-        if (victoryPanel != null)
+        private void CheckVictory()
         {
-            victoryPanel.SetActive(true);
-            Time.timeScale = 0;
+            if (enemyMove.enemies.Count == 0)
+            {
+                ShowVictoryScreen();
+            }
+        }
+
+        private void ShowVictoryScreen()
+        {
+            if (victoryPanel != null)
+            {
+                victoryPanel.SetActive(true);
+                Time.timeScale = 0;
+            }
         }
     }
 }

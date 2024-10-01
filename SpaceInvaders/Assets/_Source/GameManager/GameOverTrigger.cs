@@ -1,14 +1,17 @@
 using UnityEngine;
 
-public class GameOverTrigger : MonoBehaviour
+namespace GameManager
 {
-    [SerializeField] private GameOverManager gameOverManager;
-
-    private void OnTriggerEnter2D(Collider2D collider)
+    public class GameOverTrigger : MonoBehaviour
     {
-        if (collider.CompareTag("Enemy"))
+        [SerializeField] private GameOverManager gameOverManager;
+
+        private void OnTriggerEnter2D(Collider2D collider)
         {
-            gameOverManager.ShowGameOverMenu();
+            if (collider.CompareTag("Enemy"))
+            {
+                gameOverManager.ShowGameOverMenu();
+            }
         }
     }
 }
