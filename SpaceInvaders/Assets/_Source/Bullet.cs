@@ -4,9 +4,9 @@ public class Bullet : MonoBehaviour
 {
     public float speed;
     
-    void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Finish"))
+        if (collision.gameObject.layer != LayerMask.NameToLayer("Finish"))
         {
             Destroy(gameObject);
         }

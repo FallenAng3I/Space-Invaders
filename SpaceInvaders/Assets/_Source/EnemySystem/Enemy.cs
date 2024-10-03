@@ -27,7 +27,7 @@ namespace EnemySystem
 
         void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.CompareTag("Bullet")) //TODO сменить на layer
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Bullet"))
             {
                 TakeDamage(1);
             }

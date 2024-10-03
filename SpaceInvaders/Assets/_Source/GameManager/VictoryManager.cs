@@ -1,12 +1,15 @@
 using EnemySystem;
 using UnityEngine;
+using TMPro;
 
 namespace GameManager
 {
     public class VictoryManager : MonoBehaviour
     {
-        [SerializeField] private EnemyMove enemyMove;
         [SerializeField] private GameObject victoryPanel;
+        [SerializeField] private TMP_Text scoreText;
+        [SerializeField] private EnemyMove enemyMove;
+        [SerializeField] private ScoreManager scoreManager;
 
         private void Update()
         {
@@ -27,6 +30,7 @@ namespace GameManager
             {
                 victoryPanel.SetActive(true);
                 Time.timeScale = 0;
+                scoreText.text = $"{scoreManager.GetScore()}";
             }
         }
     }

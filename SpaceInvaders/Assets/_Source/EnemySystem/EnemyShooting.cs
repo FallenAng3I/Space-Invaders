@@ -8,11 +8,11 @@ namespace EnemySystem
         [SerializeField] private Transform firePoint;
         [SerializeField] private float fireRate;    // Скорость стрельбы
         private float nextFireTime = 0f;
-        private EnemySystem.Enemy enemy;
+        private Enemy enemy;
 
         private void Start()
         {
-            enemy = GetComponent<EnemySystem.Enemy>();
+            enemy = GetComponent<Enemy>();
             nextFireTime = Time.time + Random.Range(0f, fireRate);
         }
 
@@ -40,13 +40,15 @@ namespace EnemySystem
         private bool CanShoot()
         {
             Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 1.0f);
+            
             foreach (var collider in colliders)
             {
-                if (collider.CompareTag("Enemy") && collider.transform.position.y < transform.position.y)
+                if (collider.gameObject.layer == LayerMask.NameToLayer("Enemy") && collider.transform.position.y < transform.position.y)
                 {
                     return false;
                 }
             }
+            
             return true;
         }
     }

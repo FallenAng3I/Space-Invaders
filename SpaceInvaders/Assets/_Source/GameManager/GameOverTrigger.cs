@@ -8,7 +8,7 @@ namespace GameManager
 
         private void OnTriggerEnter2D(Collider2D collider)
         {
-            if (collider.CompareTag("Enemy"))
+            if (collider.gameObject.layer == LayerMask.NameToLayer("Enemy"))
             {
                 gameOverManager.ShowGameOverMenu();
             }

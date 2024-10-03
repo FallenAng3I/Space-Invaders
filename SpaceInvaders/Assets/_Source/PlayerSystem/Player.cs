@@ -10,9 +10,8 @@ namespace PlayerSystem
         
         void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.CompareTag("Bullet"))
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Bullet"))
             {
-                //Debug.Log("Player has damaged!");
                 TakeDamage(1);
             }
         }
