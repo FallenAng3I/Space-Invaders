@@ -4,7 +4,7 @@ namespace GameManager
 {
     public class Restart : MonoBehaviour
     {
-        public GameOverManager gom;
+        [SerializeField] private GameOverManager gom;
     
         private void Update()
         {

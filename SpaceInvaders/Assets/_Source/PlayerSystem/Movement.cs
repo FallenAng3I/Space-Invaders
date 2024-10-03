@@ -6,7 +6,7 @@ namespace PlayerSystem
     {
         public Player player;
 
-        void Update()
+        private void Update()
         {
             float horizontalInput = Input.GetAxis("Horizontal");
         
